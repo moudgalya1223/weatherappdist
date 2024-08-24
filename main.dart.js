@@ -3232,7 +3232,14 @@
     if("defineProperty" in Object){Object.defineProperty(a,"message",{get:s})
     a.name=""}else a.toString=s
     return a},
-    aDC(){return J.dk(this.dartException)},
+    aDC(){
+        if (this.dartException) {
+            return J.dk(this.dartException);
+        } else {
+            // Handle the case where dartException is null
+            return "No dartException available"; // Or return a default value
+        }
+    },
     a4(a){throw A.e(a)},
     QV(a,b){throw A.apo(b,a)},
     ag(a,b,c){var s
